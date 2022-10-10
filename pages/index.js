@@ -18,13 +18,7 @@ export default function Home() {
         id="home-image"
         className="h-96 lg:col-start-2 lg:row-start-1 lg:row-end-4 relative lg:h-full"
       >
-        <Image
-          id="hero_image_sm"
-          src={image}
-          layout="fill"
-          objectFit="cover"
-          alt="hero image"
-        />
+        <Image src={image} layout="fill" objectFit="cover" alt="hero image" />
       </section>
       {/* text */}
       <section
