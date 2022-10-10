@@ -18,7 +18,7 @@ export default function Home() {
       >
         <Image
           id="hero_image_sm"
-          src="/Hero_image.jpg"
+          src={"/Hero_image.jpg"}
           layout="fill"
           objectFit="cover"
           alt="hero image"
