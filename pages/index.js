@@ -18,7 +18,7 @@ export default function Home() {
         className="h-96 lg:col-start-2 lg:row-start-1 lg:row-end-4 relative lg:h-full"
       >
         <Image
-          src={"/Hero_image.jpg"}
+          src={"/Hero_Image.jpg"}
           layout="fill"
           objectFit="cover"
           alt="hero image"
