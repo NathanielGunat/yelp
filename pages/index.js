@@ -5,29 +5,15 @@ import airbnb from "../public/Assets/Airbnb.svg";
 import booking from "../public/Assets/Booking.svg";
 import plumGuide from "../public/Assets/PlumGuide.svg";
 import checkmark from "../public/Assets/Checkmark.svg";
-import home_image_mobile from "../public/Hero_Image.jpg";
+import HomeImage from "../components/homeImage/HomeImage";
 
 export default function Home() {
   return (
     <Layout>
       {/* nav */}
       <Nav />
-
       {/* image */}
-      <section
-        id="home-image"
-        className="h-96 lg:col-start-2 lg:row-start-1 lg:row-end-4 relative lg:h-full"
-      >
-        <Image
-          priority
-          src={home_image_mobile}
-          layout="fill"
-          objectFit="cover"
-          alt="hero image"
-          sizes="(min-width: 1024px) 50vw,100vw"
-          placeholder="blur"
-        />
-      </section>
+      <HomeImage />
       {/* text */}
       <section
         id="text"
