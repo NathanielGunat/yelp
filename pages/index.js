@@ -5,6 +5,8 @@ import airbnb from "../public/Assets/Airbnb.svg";
 import booking from "../public/Assets/Booking.svg";
 import plumGuide from "../public/Assets/PlumGuide.svg";
 import checkmark from "../public/Assets/Checkmark.svg";
+import image from "../public/Hero_image.jpg";
+
 export default function Home() {
   return (
     <Layout>
@@ -18,7 +20,7 @@ export default function Home() {
       >
         <Image
           id="hero_image_sm"
-          src={"/Hero_image.jpg"}
+          src={image}
           layout="fill"
           objectFit="cover"
           alt="hero image"
