@@ -7,8 +7,9 @@ export default function Layout({ children }) {
       <Head>
         <title>Home</title>
       </Head>
-      <Nav />
-      <main>{children}</main>
+      <main className="w-screen h-screen lg:grid lg:grid-rows-[min-content,1fr,1fr] lg:grid-cols-2">
+        {children}
+      </main>
     </>
   );
 }
