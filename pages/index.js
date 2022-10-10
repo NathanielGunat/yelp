@@ -5,7 +5,6 @@ import airbnb from "../public/Assets/Airbnb.svg";
 import booking from "../public/Assets/Booking.svg";
 import plumGuide from "../public/Assets/PlumGuide.svg";
 import checkmark from "../public/Assets/Checkmark.svg";
-import image from "../public/Hero_image.jpg";
 
 export default function Home() {
   return (
@@ -18,7 +17,12 @@ export default function Home() {
         id="home-image"
         className="h-96 lg:col-start-2 lg:row-start-1 lg:row-end-4 relative lg:h-full"
       >
-        <Image src={image} layout="fill" objectFit="cover" alt="hero image" />
+        <Image
+          src={"/Hero_image.jpg"}
+          layout="fill"
+          objectFit="cover"
+          alt="hero image"
+        />
       </section>
       {/* text */}
       <section
