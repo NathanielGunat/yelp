@@ -9,7 +9,7 @@ import HomeImage from "../components/homeImage/HomeImage";
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       {/* nav */}
       <Nav />
       {/* image */}
@@ -52,6 +52,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }
+
+Home.getLayout = function getLayout(page) {
+  return <Layout>{page}</Layout>;
+};
