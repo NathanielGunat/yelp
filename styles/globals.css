@@ -1,4 +1,6 @@
 @tailwind base;
+@import "./base";
+
 @tailwind components;
 @tailwind utilities;
 
@@ -7,6 +9,6 @@
     @apply text-3xl md:text-3xl lg:text-4xl font-sans font-black;
   }
   p {
-    @apply text-lg;
+    @apply text-lg font-sans;
   }
 }

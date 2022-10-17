@@ -1,20 +1,19 @@
-import Nav from "../components/nav/Nav";
+import Nav_Home from "components/nav/Nav_Home";
 import Image from "next/image";
-import Layout from "../components/layout/Layout";
-import airbnb from "../public/Assets/Airbnb.svg";
-import booking from "../public/Assets/Booking.svg";
-import plumGuide from "../public/Assets/PlumGuide.svg";
-import checkmark from "../public/Assets/Checkmark.svg";
-import HomeImage from "../components/homeImage/HomeImage";
+import checkmark from "public/Assets/Checkmark.svg";
+import HomeImage from "components/homeImage/HomeImage";
+import Layout_Home from "components/layout/Layout_Home";
+import Button from "components/button/Button";
+import { Airbnb, Booking, PlumGuide } from "components/icons";
 
 export default function Home() {
   return (
-    <>
-      {/* nav */}
-      <Nav />
-      {/* image */}
+    <div
+      id="Home-Container"
+      className="w-screen h-screen lg:grid lg:grid-rows-[min-content,1fr,1fr] lg:grid-cols-2"
+    >
+      <Nav_Home />
       <HomeImage />
-      {/* text */}
       <section
         id="text"
         className="py-12 row-start-2 row-span-full px-8 lg:px-24 lg:py-16 grid place-items-center"
@@ -39,23 +38,21 @@ export default function Home() {
               See locations for all camps.
             </li>
           </ul>
-          <button className="bg-black rounded-sm text-white py-4  px-8">
-            View Campgrounds
-          </button>
+          <Button />
           <div>
             <p>Partnered with:</p>
             <div className="flex gap-3">
-              <Image src={airbnb} alt="airbnb" />
-              <Image src={booking} alt="booking" />
-              <Image src={plumGuide} alt="plumGuide" />
+              <Airbnb />
+              <Booking />
+              <PlumGuide />
             </div>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 
 Home.getLayout = function getLayout(page) {
-  return <Layout>{page}</Layout>;
+  return <Layout_Home page={"Home"}>{page}</Layout_Home>;
 };
