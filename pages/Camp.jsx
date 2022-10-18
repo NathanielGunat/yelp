@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Button from "@components/button/Button";
-import Layout_Camps from "@components/layout/Layout_Camps";
+import Button from "@components/common/Button";
 import seach_logo from "@public/Assets/Search_Icon.svg";
 
 export default function Camps() {
@@ -32,7 +31,3 @@ export default function Camps() {
     </div>
   );
 }
-
-Camps.getLayout = function getLayout(page) {
-  return <Layout_Camps page={"Camps"}>{page}</Layout_Camps>;
-};

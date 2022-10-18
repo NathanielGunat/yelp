@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import homeImage_laptop from "../../public/Hero_Image.jpg";
-import homeImage_mobile_tablet from "../../public/Hero_Image (Tablet and Mobile).jpg";
+import homeImage_laptop from "@public/Hero_Image.jpg";
+import homeImage_mobile_tablet from "@public/Hero_Image (Tablet and Mobile).jpg";
 
-export default function HomeImage() {
+export default function HeroImage() {
   const [tablet_and_mobile, set_tablet_and_mobile] = useState(null);
   useEffect(() => {
     function screen(e) {
@@ -23,20 +23,20 @@ export default function HomeImage() {
 
   return (
     <>
-      <section
+      <div
         id="home-image"
-        className="h-96 lg:col-start-2 lg:row-start-1 lg:row-end-4 relative lg:h-full"
+        className="w-full h-64 relative lg:row-span-2 lg:h-full"
       >
         <Image
           priority
           src={tablet_and_mobile ? homeImage_mobile_tablet : homeImage_laptop}
-          layout="fill"
-          objectFit="cover"
           alt="hero image"
+          layout="fill"
           sizes="(min-width: 1024px) 50vw,100vw"
           placeholder="blur"
+          objectFit="cover"
         />
-      </section>
+      </div>
     </>
   );
 }
