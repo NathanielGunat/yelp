@@ -11,7 +11,7 @@ export default function PlumGuide() {
     >
       <mask
         id="mask0"
-        style={{ "mask-type": "alpha" }}
+        style={{ maskType: "alpha" }}
         maskUnits="userSpaceOnUse"
         x="12"
         y="12"

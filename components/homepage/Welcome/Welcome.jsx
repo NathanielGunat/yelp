@@ -1,9 +1,16 @@
 import Image from "next/image";
-import Button from "@components/common/Button";
+import { useRouter } from "next/router";
+import { Button, Partners } from "@components/ui/";
 import checkmark from "@public/Assets/Checkmark.svg";
-import { Airbnb, Booking, PlumGuide } from "@components/icons";
 
 export default function Welcome() {
+  const router = useRouter();
+
+  function navigateToCampsPage(e) {
+    e.preventDefault();
+    router.push("/Camp");
+  }
+
   return (
     <section
       id="text"
@@ -29,15 +36,10 @@ export default function Welcome() {
             See locations for all camps.
           </li>
         </ul>
-        <Button />
-        <div>
-          <p>Partnered with:</p>
-          <div className="flex gap-3">
-            <Airbnb />
-            <Booking />
-            <PlumGuide />
-          </div>
-        </div>
+
+        <Button onClick={navigateToCampsPage}>View camps</Button>
+
+        <Partners />
       </div>
     </section>
   );

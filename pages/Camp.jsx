@@ -1,10 +1,10 @@
 import Image from "next/image";
-import Button from "@components/common/Button";
+import Button from "@components/ui/Button";
 import seach_logo from "@public/Assets/Search_Icon.svg";
 
 export default function Camps() {
   return (
-    <div className="py-4 px-8 lg:px-24 w-screen h-screen">
+    <div className="py-4 px-8 lg:px-24 bg-red-200">
       <section className="bg-gray-200 min-w-full p-8 rounded-md">
         <h1>Welcome to YelpCamp!</h1>
         <p>
@@ -24,7 +24,7 @@ export default function Camps() {
               className="focus:outline-none"
             />
           </label>
-          <Button />
+          <Button>View camps</Button>
         </form>
         or add your own camp
       </section>

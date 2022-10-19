@@ -1,0 +1,7 @@
+.root {
+  @apply p-4 lg:px-24 grid grid-cols-[max-content,1fr] gap-8 w-full;
+}
+
+.root > div {
+  @apply flex justify-between items-center;
+}
