@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { Button, Partners } from "@components/ui/";
+import { Button, Partners, Text } from "@components/ui/";
 import checkmark from "@public/Assets/Checkmark.svg";
 
 export default function Welcome() {
@@ -8,7 +8,7 @@ export default function Welcome() {
 
   function navigateToCampsPage(e) {
     e.preventDefault();
-    router.push("/Camp");
+    router.push("/camps");
   }
 
   return (
@@ -17,7 +17,7 @@ export default function Welcome() {
       className="  py-12 px-8 lg:px-24 lg:py-16 grid place-items-center"
     >
       <div id="for-centering " className=" space-y-6 ">
-        <h1>Explore the best camps on Earth.</h1>
+        <Text variant="pageHeading">Explore the best camps on Earth.</Text>
         <p>
           YelpCamp is a curated list ot the best camping on Earth. Unfiltered
           and unbiased reviews.

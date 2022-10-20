@@ -3,12 +3,3 @@
 
 @tailwind components;
 @tailwind utilities;
-
-@layer base {
-  h1 {
-    @apply text-3xl md:text-3xl lg:text-4xl font-sans font-black;
-  }
-  p {
-    @apply text-lg font-sans;
-  }
-}

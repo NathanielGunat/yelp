@@ -1,3 +1,11 @@
-.btn {
-  @apply bg-black rounded-sm text-white py-4 px-8;
+.root {
+  @apply py-4 px-8 shadow-sm;
+}
+
+.white {
+  @apply bg-primary rounded-sm text-secondary;
+}
+
+.black {
+  @apply bg-secondary rounded-sm text-primary;
 }

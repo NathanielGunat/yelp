@@ -1,12 +1,15 @@
 import Image from "next/image";
+import { CAMPS } from "../DATA/DATA";
+import { Text } from "@components/ui";
+import { Camp } from "../components/ui";
 import Button from "@components/ui/Button";
 import seach_logo from "@public/Assets/Search_Icon.svg";
 
 export default function Camps() {
   return (
-    <div className="py-4 px-8 lg:px-24 bg-red-200">
-      <section className="bg-gray-200 min-w-full p-8 rounded-md">
-        <h1>Welcome to YelpCamp!</h1>
+    <div className="py-4 px-8 lg:px-24 space-y-8">
+      <section className="bg-accent min-w-full p-8 rounded-md space-y-5">
+        <Text>Welcome to YelpCamp!</Text>
         <p>
           View our hand-picked campgrounds from all over the world, or add your
           own.
@@ -24,9 +27,14 @@ export default function Camps() {
               className="focus:outline-none"
             />
           </label>
-          <Button>View camps</Button>
+          <Button>Search</Button>
         </form>
         or add your own camp
+      </section>
+      <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {CAMPS.map((camp) => (
+          <Camp key={camp.id} camp={camp} />
+        ))}
       </section>
     </div>
   );
