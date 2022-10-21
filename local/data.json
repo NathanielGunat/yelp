@@ -1,0 +1,41 @@
+{
+  "CAMPS": [
+    {
+      "id": "Mount_Ulap",
+      "name": "Mount Ulap",
+      "src": "/camps/Mount_Ulap.png",
+      "discription": "One of the most famous hikes in Benguet is Mt Ulap in Itogon"
+    },
+    {
+      "id": "Calaguas_Islands",
+      "name": "Calaguas Islands",
+      "src": "/camps/Calagus_Islands.jpg",
+      "discription": " A paradise of islands that can rival the white sand beauty of Boracay."
+    },
+    {
+      "id": "Onay_Beach",
+      "name": "Onay Beach",
+      "src": "/camps/Onay_Beach.jpg",
+      "discription": "This is one of the best beach camping sites, beautiful and pristine."
+    },
+    {
+      "id": "Seven_Sisters_Waterfall",
+      "name": "Seven Sisters Waterfall",
+      "src": "/camps/Seven_Sisters_Waterfall.jpg",
+      "discription": "The Seven Sisters is the 39th tallest waterfall in Norway."
+    },
+    {
+      "id": "Latik_Riverside",
+      "name": "Latik Riverside",
+      "src": "/camps/Latik_Riverside.jpg",
+      "discription": "Philippines is one of the most dazzling countries in all of Asia."
+    },
+
+    {
+      "id": "Buloy_Springs",
+      "name": "Buloy Springs",
+      "src": "/camps/Buloy_Springs.jpg",
+      "discription": "This is one of the best beach camping sites, beautiful and pristine."
+    }
+  ]
+}

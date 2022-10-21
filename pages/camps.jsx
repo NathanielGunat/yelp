@@ -1,11 +1,20 @@
 import Image from "next/image";
-import { CAMPS } from "../DATA/DATA";
+import { getAllCamps } from "@local/operator";
 import { Text } from "@components/ui";
 import { Camp } from "../components/ui";
 import Button from "@components/ui/Button";
 import seach_logo from "@public/Assets/Search_Icon.svg";
 
-export default function Camps() {
+export async function getStaticProps() {
+  const { CAMPS } = getAllCamps();
+  return {
+    props: {
+      CAMPS,
+    },
+  };
+}
+
+export default function Camps({ CAMPS }) {
   return (
     <div className="py-4 px-8 lg:px-24 space-y-8">
       <section className="bg-accent min-w-full p-8 rounded-md space-y-5">

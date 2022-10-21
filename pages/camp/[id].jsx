@@ -1,9 +1,27 @@
 import { useRouter } from "next/router";
-import { CAMPS } from "../../DATA/DATA";
+import { getAllCamps, getCampID } from "@local/operator";
 import Image from "next/image";
 import { Text } from "@components/ui";
 import mapPlaceHolder from "@public/Map.png";
-export default function Slug() {
+
+export async function getStaticProps() {
+  const { CAMPS } = getAllCamps();
+  return {
+    props: {
+      CAMPS,
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  const paths = getCampID();
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export default function Slug({ CAMPS }) {
   const route = useRouter();
   const { id } = route.query;
   const camp = CAMPS.find((camp) => camp.id === id);
