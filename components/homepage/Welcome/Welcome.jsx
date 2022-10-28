@@ -12,10 +12,7 @@ export default function Welcome() {
   }
 
   return (
-    <section
-      id="text"
-      className="  py-12 px-8 lg:px-24 lg:py-16 grid place-items-center"
-    >
+    <section id="text" className=" wrapper grid place-items-center">
       <div id="for-centering " className=" space-y-6 ">
         <Text variant="pageHeading">Explore the best camps on Earth.</Text>
         <p>

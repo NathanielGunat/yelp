@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { getAllCamps } from "@local/operator";
+import { useState } from "react";
 import { Text } from "@components/ui";
-import { Camp } from "../components/ui";
 import Button from "@components/ui/Button";
+import { getAllCamps } from "@local/operator";
+import { CampItem } from "@components/common";
 import seach_logo from "@public/Assets/Search_Icon.svg";
 
 export async function getStaticProps() {
@@ -15,8 +16,21 @@ export async function getStaticProps() {
 }
 
 export default function Camps({ CAMPS }) {
+  const [campList, setCampList] = useState(search(""));
+  const [inputValue, setInputValue] = useState("");
+
+  function search(name) {
+    return CAMPS.filter((camp) => camp.name.toLowerCase().includes(name));
+  }
+
+  function onSearchHandler(e) {
+    const searchResults = search(e.target.value);
+    setInputValue(e.target.value);
+    setCampList(searchResults);
+  }
+
   return (
-    <div className="py-4 px-8 lg:px-24 space-y-8">
+    <div className="wrapper space-y-8">
       <section className="bg-accent min-w-full p-8 rounded-md space-y-5">
         <Text>Welcome to YelpCamp!</Text>
         <p>
@@ -30,19 +44,24 @@ export default function Camps({ CAMPS }) {
           >
             <Image src={seach_logo} alt={"seach"} />
             <input
+              onChange={onSearchHandler}
               id="search-camps"
-              type="text"
+              type="search"
               placeholder="Search for camps"
               className="focus:outline-none"
+              value={inputValue}
             />
           </label>
           <Button>Search</Button>
         </form>
         or add your own camp
       </section>
+
       <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {CAMPS.map((camp) => (
-          <Camp key={camp.id} camp={camp} />
+        {campList.map((camp) => (
+          <div key={camp.id} className="shadow-md p-4 space-y-5">
+            <CampItem variant="campItem" camp={camp} />
+          </div>
         ))}
       </section>
     </div>

@@ -1,9 +1,8 @@
-import { useRouter } from "next/router";
-import { getAllCamps, getCampID } from "@local/operator";
 import Image from "next/image";
-import { Text } from "@components/ui";
+import { useRouter } from "next/router";
 import mapPlaceHolder from "@public/Map.png";
-
+import { getAllCamps, getCampPaths } from "@local/operator";
+import { CampItem } from "@components/common";
 export async function getStaticProps() {
   const { CAMPS } = getAllCamps();
   return {
@@ -14,7 +13,7 @@ export async function getStaticProps() {
 }
 
 export async function getStaticPaths() {
-  const paths = getCampID();
+  const paths = getCampPaths();
   return {
     paths,
     fallback: false,
@@ -27,14 +26,11 @@ export default function Slug({ CAMPS }) {
   const camp = CAMPS.find((camp) => camp.id === id);
 
   return (
-    <div className="shadow-md p-4 space-y-5 lg:flex lg:flex-row-reverse">
-      <section>
-        <div className="relative aspect-video">
-          <Image src={camp.src} alt={camp.name} layout="fill" />
-        </div>
-        <Text variant={"sectionHeading"}>{camp.name}</Text>
-        <p>{camp.discription}</p>
+    <div className="wrapper shadow-md space-y-5 lg:flex lg:flex-row-reverse lg:items-start lg:justify-center lg:gap-16">
+      <section className="lg:w-3/4 ml-auto">
+        <CampItem variant="th" camp={camp} />
       </section>
+
       <section>
         <Image src={mapPlaceHolder} alt="" />
       </section>

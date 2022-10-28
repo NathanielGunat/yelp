@@ -6,7 +6,7 @@
       "@public/*": ["public/*"],
       "@lib/*": ["lib/*"],
       "@assets/*": ["assets/*"],
-      "@local/*": ["local/*"]
+      "@local/*": ["lib/local/*"]
     },
 
     "target": "es5",
